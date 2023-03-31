@@ -1,5 +1,5 @@
 <div *ngIf = "teatroIsShown == false">
-  <app-access (nuovoKeyEvent)="download($event)"> </app-access>
+  <app-access (KeyEvent)="download($event)"> </app-access>
 </div>
 <div *ngIf="teatroIsShown" >
   <h5>Inserisci nominativo</h5>
