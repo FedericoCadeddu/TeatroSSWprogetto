@@ -20,7 +20,7 @@ export class MongodbService {
   }
   public postvalue(data: Object, key: string): Observable<Object> {
     return this.http.post(
-      this.URL + '/post?key=' + key + '&msg=' + JSON.stringify(data),
+      this.URL + '/set?key=' + key + '&msg=' + JSON.stringify(data),
       data);
   }
 }

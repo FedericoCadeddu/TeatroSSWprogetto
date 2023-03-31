@@ -7,8 +7,8 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class AccessComponent implements OnInit {
   @Output() nuovoKeyEvent = new EventEmitter<string>();
-  getKey(chiave: string) {
-    this.nuovoKeyEvent.emit(chiave);
+  getKey(key: string) {
+    this.nuovoKeyEvent.emit(key);
   }
   
 
