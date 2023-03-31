@@ -18,6 +18,7 @@ export class MongodbService {
   public getvalue(data:Object): Observable<Object> {
     return this.http.get<Object>(this.URL + '/get?key=' + this.key);
   }
+  
   public postvalue(data: Object, key: string): Observable<Object> {
     return this.http.post(
       this.URL + '/set?key=' + key + '&msg=' + JSON.stringify(data),

@@ -10,8 +10,6 @@ export class AccessComponent implements OnInit {
   getKey(key: string) {
     this.KeyEvent.emit(key);
   }
-  
-
   ngOnInit() {
   }
 

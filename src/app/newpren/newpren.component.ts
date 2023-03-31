@@ -13,5 +13,4 @@ export class NewprenComponent implements OnInit {
   }
   ngOnInit() {
   }
-
 }

@@ -13,5 +13,4 @@ export class CleanComponent implements OnInit {
 }
   ngOnInit() {
   }
-
 }
