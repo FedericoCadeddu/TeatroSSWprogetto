@@ -34,7 +34,7 @@
       <h3>Palchi</h3>
       <div *ngFor="let fila of teatro.palchi; index as i" >
         <span *ngFor="let posto of fila; index as j" >
-          <button class="cacca" id ="bottone"  (click)="MostraP2(i,j)" > P{{ i + 1 }}{{ j + 1 }}</button>
+          <button class="cacca" id ="bottone"  (click)="MostraP2(i,j)" [ngStyle]="{ 'color': teatro.platea[i][j] !='x' ? 'red' : 'green' }" > P{{ i + 1 }}{{ j + 1 }}</button>
         </span>
       </div>
     </div>

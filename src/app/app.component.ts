@@ -24,7 +24,7 @@ export class AppComponent {
   nfilePalchi = 4;
   npostiPalchi = 6;
   constructor(private database: MongodbService) {
-    this.key = '049b67ce';
+    this.key = 'bf1c48ab';
     this.teatro.platea = Array(this.nfilePlatea)
       .fill(undefined)
       .map(() => Array(this.npostiPlatea).fill('x'));
@@ -36,6 +36,7 @@ export class AppComponent {
   
   Mostra(id1: string|number, id2: string|number) {
       this.nome.name = this.teatro.platea[id1][id2];
+      console.log(this.teatro);
 }
 MostraP(id1: string|number, id2: string|number) {  
   this.nome.name = this.teatro.palchi[id1][id2];
@@ -45,31 +46,26 @@ Mostra2(id1,id2){
         this.teatro.platea[id1][id2]=this.prenotazioni[id1];
         this.prenotazioni.pop()
         this.nome.name = this.teatro.platea[id1][id2];
+        this.database.setValue(this.teatro,this.key);
+    console.log(this.teatro);
 }
 MostraP2(id1,id2){
   this.teatro.palchi[id1][id2]=this.prenotazioni[id1];
   this.prenotazioni.pop();
   this.nome.name = this.teatro.palchi[id1][id2];
+  this.database.setValue(this.teatro,this.key);
+    console.log(this.teatro);
 }
   
   addPren(newPren: any ) {
     this.prenotazioni.push(newPren);
     if(this.nome.name != undefined){
-      this.nome.name = newPren;
-      var obs = this.database.postvalue(this.teatro, this.key);
-      obs.subscribe({
-        next: (data) => console.log(data),
-        error: (err) => console.error('Observer got an error: ' + err.message),
-      });
-    } 
+      this.nome.name = newPren;}
   }
-
-  download(k:string) {
+  download(k:string){
+    k = this.key;
     this.teatroIsShown = !this.teatroIsShown;
-    var obs = this.database.getvalue(this.teatro);
-    obs.subscribe({
-      next: (data) => console.log(data),
-      error: (err) => console.error('Observer got an error: ' + err),
-    });
+    this.database.getValue(k);
+    console.log(this.teatro);
   }
 }
