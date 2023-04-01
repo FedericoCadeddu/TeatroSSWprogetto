@@ -16,7 +16,7 @@ export class MongodbService {
     //bf1c48ab//
   }
   
-  public getValue(key:string) {
+  public getValue() {
     const obs = ajax({
       method: 'GET',
       url: this.URL + '/get?key=' + this.key,
@@ -30,7 +30,7 @@ export class MongodbService {
     });
   }
   
-  public setValue(data:Object, key:string) {
+  public setValue(data:Object) {
     const obs = ajax({
       method: 'POST',
       url:this.URL + '/set?key=' + this.key,

@@ -46,14 +46,14 @@ Mostra2(id1,id2){
         this.teatro.platea[id1][id2]=this.prenotazioni[id1];
         this.prenotazioni.pop()
         this.nome.name = this.teatro.platea[id1][id2];
-        this.database.setValue(this.teatro,this.key);
+        this.database.setValue(this.teatro);
     console.log(this.teatro);
 }
 MostraP2(id1,id2){
   this.teatro.palchi[id1][id2]=this.prenotazioni[id1];
   this.prenotazioni.pop();
   this.nome.name = this.teatro.palchi[id1][id2];
-  this.database.setValue(this.teatro,this.key);
+  this.database.setValue(this.teatro);
     console.log(this.teatro);
 }
   
@@ -65,7 +65,7 @@ MostraP2(id1,id2){
   download(k:string){
     k = this.key;
     this.teatroIsShown = !this.teatroIsShown;
-    this.database.getValue(k);
+    this.database.getValue();
     console.log(this.teatro);
   }
 }
