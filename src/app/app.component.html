@@ -4,6 +4,7 @@
 <div *ngIf="teatroIsShown" >
   <h5>Inserisci nominativo</h5>
   <app-newpren (newPrenEvent)="addPren($event)" ></app-newpren>
+  <p *ngIf="prenotazioni.length == 1">{{prenotazioni[0]}} scegli il posto</p>
 </div>
 <span *ngIf = "prenotazioni.length == 0; else altro">
   <div *ngIf="teatroIsShown" >
@@ -39,7 +40,6 @@
       </div>
     </div>
   </div>  
-  
 </ng-template>
 
 <app-clean [postoC] = "nome" ></app-clean>
