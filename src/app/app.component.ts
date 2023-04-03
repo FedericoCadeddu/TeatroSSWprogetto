@@ -43,18 +43,24 @@ MostraP(id1: string|number, id2: string|number) {
 }
 
 Mostra2(id1,id2){
+  if(this.teatro.platea[id1][id2] == 'x' ){
         this.teatro.platea[id1][id2]=this.prenotazioni[id1];
         this.prenotazioni.pop()
         this.nome.name = this.teatro.platea[id1][id2] + ' hai confermato la prenotazione in platea' + 'P' + (id1+1) + (id2+1);
         this.database.setValue(this.teatro);
+      } else {
+        this.nome.name = 'è già occupato, scegli un altro posto';}
     console.log(this.teatro);
 }
 MostraP2(id1,id2){
-  this.teatro.palchi[id1][id2]=this.prenotazioni[id1];
-  this.prenotazioni.pop();
-  this.nome.name = this.teatro.palchi[id1][id2] + ' hai confermato la prenotazione in palchi' + 'P' + (id1+1) + (id2+1);
-  this.database.setValue(this.teatro);
-    console.log(this.teatro);
+  if(this.teatro.platea[id1][id2] == 'x' ){
+      this.teatro.palchi[id1][id2]=this.prenotazioni[id1];
+      this.prenotazioni.pop();
+      this.nome.name = this.teatro.palchi[id1][id2] + ' hai confermato la prenotazione in palchi' + 'P' + (id1+1) + (id2+1);
+      this.database.setValue(this.teatro);
+    } else {
+      this.nome.name = 'è già occupato, scegli un altro posto';}
+      console.log(this.teatro);
 }
   
   addPren(newPren: any ) {
