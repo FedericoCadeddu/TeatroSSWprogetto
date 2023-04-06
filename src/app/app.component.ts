@@ -44,7 +44,7 @@ MostraP(id1: string|number, id2: string|number) {
 
 Mostra2(id1,id2){
   if(this.teatro.platea[id1][id2] == 'x' ){
-        this.teatro.platea[id1][id2]=this.prenotazioni[id1];
+        this.teatro.platea[id1][id2]=this.prenotazioni[0];
         this.prenotazioni.pop()
         this.nome.name = this.teatro.platea[id1][id2] + ' hai confermato la prenotazione in platea' + 'P' + (id1+1) + (id2+1);
         this.database.setValue(this.teatro);
@@ -54,7 +54,7 @@ Mostra2(id1,id2){
 }
 MostraP2(id1,id2){
   if(this.teatro.platea[id1][id2] == 'x' ){
-      this.teatro.palchi[id1][id2]=this.prenotazioni[id1];
+      this.teatro.palchi[id1][id2]=this.prenotazioni[0];
       this.prenotazioni.pop();
       this.nome.name = this.teatro.palchi[id1][id2] + ' hai confermato la prenotazione in palchi' + 'P' + (id1+1) + (id2+1);
       this.database.setValue(this.teatro);
